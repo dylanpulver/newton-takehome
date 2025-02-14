@@ -1,0 +1,240 @@
+/* Define CSS variables for reusability */
+:root {
+  --background-dark: #121212;
+  --text-color: white;
+  --accent-color: #3EE5C2;
+  --secondary-text: #888;
+  --border-color: #222;
+  --table-header-bg: #333;
+  --hover-bg: rgba(255, 255, 255, 0.1);
+  --toggle-bg: #444;
+  --toggle-active-bg: #4CAF50;
+}
+
+/* Reset some basic styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--background-dark);
+  color: var(--text-color);
+  text-align: center;
+}
+
+/* Center the dashboard */
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Header */
+.dashboard-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.dashboard-header p {
+  color: var(--secondary-text);
+}
+
+/* Search Bar */
+.search-container {
+  display: flex;
+  align-items: center;
+  background: var(--toggle-bg);
+  padding: 10px;
+  border-radius: 8px;
+  margin: 20px 0;
+  width: 300px;
+}
+
+.search-container input {
+  border: none;
+  background: transparent;
+  outline: none;
+  color: var(--text-color);
+  width: 100%;
+  font-size: 16px;
+}
+
+.search-container input::placeholder {
+  color: var(--secondary-text);
+}
+
+/* Table - Responsive Wrapper */
+.crypto-table-container {
+  overflow-x: auto;
+  width: 100%;
+  max-width: 900px;
+}
+
+.crypto-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.crypto-table th,
+.crypto-table td {
+  padding: 15px;
+  border-bottom: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.crypto-table th {
+  background: var(--table-header-bg);
+  color: var(--text-color);
+}
+
+.crypto-table tbody tr:hover {
+  background: var(--hover-bg);
+  transition: background 0.2s ease-in-out;
+}
+
+/* Watchlist Button */
+.watch-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.watch-btn:hover {
+  color: gold;
+}
+
+.watch-btn:focus {
+  outline: 2px solid var(--accent-color);
+}
+
+/* Toggle Switch */
+.toggle-switch {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+/* Hide default checkbox but keep it accessible */
+.toggle-switch input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-switch label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Toggle slider */
+.toggle-switch .slider {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  background: var(--toggle-bg);
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+/* Circle inside slider */
+.toggle-switch .slider::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 50%;
+  left: 4px;
+  background: var(--text-color);
+  border-radius: 50%;
+  transform: translateY(-50%);
+  transition: 0.3s;
+}
+
+/* Checked (active) state */
+.toggle-switch input:checked + .slider {
+  background: var(--toggle-active-bg);
+}
+
+.toggle-switch input:checked + .slider::before {
+  left: 20px;
+}
+
+/* Header Banner */
+.header-banner {
+  width: 100%;
+  height: 50px;
+  background: #0F0F1A; /* Dark background */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Pushes items to left & right */
+  padding: 0 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* "Newton" Logo */
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--accent-color);
+}
+
+/* Right-side buttons */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Log In text */
+.login {
+  font-size: 14px;
+  color: var(--secondary-text);
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.login:hover {
+  color: var(--text-color);
+}
+
+.login:focus {
+  outline: 2px solid var(--accent-color);
+}
+
+/* Sign Up Button */
+.signup-btn {
+  background: transparent;
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.signup-btn:hover {
+  background: var(--accent-color);
+  color: #0F0F1A;
+}
+
+/* Profile Icon */
+.profile-icon {
+  font-size: 18px;
+  cursor: pointer;
+  color: var(--secondary-text);
+  transition: color 0.3s;
+}
+
+.profile-icon:hover {
+  color: var(--text-color);
+}
